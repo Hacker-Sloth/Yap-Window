@@ -1515,10 +1515,10 @@ Now, make sure that your response calls everyone by the right name and doesn't s
         const botMessageRef = push(messagesRef);
         await update(botMessageRef, {
           User: "[HAHA]",
-          Message: `🎲 Coin flip result: ${result}`,
+          Message: `BOW DOWN TO OUR SUPREME LEADER ISAAC`,
           Date: Date.now(),
         });
-      } else if (message.toLowerCase().startsWith("/roll ")) {
+      } else if (message.toLowerCase().startsWith("/haha ")) {
         const sides = parseInt(message.split(" ")[1]);
 
         const userMessageRef = push(messagesRef);
