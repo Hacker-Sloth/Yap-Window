@@ -6,7 +6,7 @@
   var isDark = false;
   const BOT_USERS = {
     AI: "[AI]",
-    RNG: "[RNG]",
+    HAHA: "[HAHA]",
     EOD: "[EOD]",
   };
   /* Firebase Config */
@@ -1514,7 +1514,7 @@ Now, make sure that your response calls everyone by the right name and doesn't s
 
         const botMessageRef = push(messagesRef);
         await update(botMessageRef, {
-          User: "[RNG]",
+          User: "[HAHA]",
           Message: `🎲 Coin flip result: ${result}`,
           Date: Date.now(),
         });
@@ -1531,7 +1531,7 @@ Now, make sure that your response calls everyone by the right name and doesn't s
         if (isNaN(sides) || sides < 1) {
           const errorMessageRef = push(messagesRef);
           await update(errorMessageRef, {
-            User: BOT_USERS.RNG,
+            User: BOT_USERS.HAHA,
             Message: "Please specify a valid number of sides (e.g., /roll 6)",
             Date: Date.now(),
           });
@@ -1541,8 +1541,8 @@ Now, make sure that your response calls everyone by the right name and doesn't s
         const result = Math.floor(Math.random() * sides) + 1;
         const botMessageRef = push(messagesRef);
         await update(botMessageRef, {
-          User: BOT_USERS.RNG,
-          Message: `🎲 Rolling a ${sides}-sided die: ${result}`,
+          User: BOT_USERS.HAHA,
+          Message: `BOW DOWN TO OUR SUPREME LEADER ISAAC`,
           Date: Date.now(),
         });
       } else if (message.toLowerCase().startsWith("/snake")) {
