@@ -7,7 +7,7 @@
   const BOT_USERS = {
     AI: "[AI]",
     HAHA: "[HAHA]",
-    EOD: "[EOD]",
+    EOD: "[EOD+]",
   };
   /* Firebase Config */
   const firebaseConfig = {
@@ -1419,7 +1419,7 @@ Now, make sure that your response calls everyone by the right name and always in
           Message: aiReply,
           Date: d,
         });
-      } else if (message.toLowerCase().startsWith("/eod")) {
+      } else if (message.toLowerCase().startsWith("/eod+")) {
         const parts = message.split(" ");
         let yesChance = 45;
         let noChance = 45;
@@ -1459,14 +1459,14 @@ Now, make sure that your response calls everyone by the right name and always in
         if (random < yesChance) {
           result = "Yes";
         } else if (random < yesChance + noChance) {
-          result = "No";
+          result = "Yes";
         } else {
-          result = "Maybe";
+          result = "Yes";
         }
 
         const botMessageRef = push(messagesRef);
         await update(botMessageRef, {
-          User: "[EOD]",
+          User: "[EOD+]",
           Message: `${result}`,
           Date: Date.now(),
         });
