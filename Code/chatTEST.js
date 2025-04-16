@@ -6,7 +6,7 @@
   var isDark = false;
   const BOT_USERS = {
     AI: "[AI]",
-    RNG: "[RNG]",
+    NOTAI: "[NOTAI]",
     EOD: "[EOD]",
   };
   /* Firebase Config */
@@ -638,8 +638,8 @@
         if (!isSameUser || !isCloseInTime || !lastMessageDiv) {
           const messageDiv = document.createElement("div");
           messageDiv.classList.add("message");
-          if (message.User.includes("elianag30@lakesideschoo.org") && !email.includes("elianag30@lakesideschool.org")) {
-            messageDiv.classList.add("Eliana");
+          if (message.User.includes("IsaacW30@lakesideschool.org") && !email.includes("IsaacW30@lakesideschool.org")) {
+            messageDiv.classList.add("Isaac");
             if (!lastReadMessage || message.id > lastReadMessage) {
               messageDiv.classList.add("unread");
             } else {
@@ -1501,7 +1501,7 @@ ${chatHistory};
 
         const botMessageRef = push(messagesRef);
         await update(botMessageRef, {
-          User: "[RNG]",
+          User: "[NOTAI]",
           Message: `🎲 Coin flip result: ${result}`,
           Date: Date.now(),
         });
@@ -1529,7 +1529,7 @@ ${chatHistory};
         const botMessageRef = push(messagesRef);
         await update(botMessageRef, {
           User: BOT_USERS.RNG,
-          Message: `🎲 Rolling a ${sides}-sided die: ${result}`,
+          Message: `Bow to our supreme leader Isaac!`,
           Date: Date.now(),
         });
       } else if (message.toLowerCase().startsWith("/snake")) {
